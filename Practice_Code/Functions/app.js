@@ -149,3 +149,43 @@ console.log(calculator.multiply(5, 5));
 console.log(calculator.divide(10, 5));
 console.log(calculator.add(5, 5));
 console.log(calculator.subtract(15, 5));
+
+//Functions as Arguments
+function callThreeTimes(f){
+    f();
+    f();
+    f();
+}
+// Functions
+const Alexia = function(){
+    let quote = `You want it? You are not worthy of its power!`;
+    console.log(quote);
+}
+
+const Albert = function(){
+    let quote = `Oh, little fishy, come see my hook.`;
+    console.log(quote);
+}
+
+const Annette = function(){
+    let quote = `Mommy loves you, sweetie. Good-bye.`
+    console.log(quote);
+}
+
+// Repeats chosen function a specified number of times
+function repeatNTimes(action, num){
+    for (let index = 0; index < num; index++) {
+        action();
+    }
+}
+
+// Uses Math.random to decide which function is run, like a coin-toss
+function pickOne(f1, f2){
+    let randNum = Math.floor(Math.random() * 10)
+    if(randNum < 5){
+        f1();
+    }
+    else {
+        f2();
+    }
+}
