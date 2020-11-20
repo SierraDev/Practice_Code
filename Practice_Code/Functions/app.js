@@ -105,3 +105,8 @@ function getCard(){
 //     const suit = suits[suitIndex];
 //     return {value:value, suit:suit};
 // }
+
+//Function Expressions
+const divide = function(x, y){
+    return x/y;
+}
