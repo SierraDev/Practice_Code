@@ -110,3 +110,42 @@ function getCard(){
 const divide = function(x, y){
     return x/y;
 }
+
+// Higher Order Functions
+function add(x, y){
+    return x + y;
+}
+
+const subtract = function(x, y){
+    return x - y;
+}
+
+function multiply(x, y){
+    return x * y;
+}
+
+const divide = function(x, y){
+    return x/y;
+}
+
+const operations = [add, subtract, multiply, divide];
+operations[1](5, 5);
+
+//looping over array of functions
+for (let func of operations) {
+    let result = func(5, 10);
+    console.log(result);
+}
+
+//attaching function as a method in an object
+const calculator = {
+    multiply: multiply,
+    divide: divide,
+    add: add,
+    subtract: subtract
+}
+
+console.log(calculator.multiply(5, 5));
+console.log(calculator.divide(10, 5));
+console.log(calculator.add(5, 5));
+console.log(calculator.subtract(15, 5));
