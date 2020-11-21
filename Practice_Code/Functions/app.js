@@ -189,3 +189,28 @@ function pickOne(f1, f2){
         f2();
     }
 }
+// Returning Functions
+function multiplBy(num) {
+    return function(x){
+        return x * num;
+    }
+}
+const triple = multiplBy(8); // sets num to 8
+triple(8); // 8 becomes x and multiplies by num (8), which equals 64
+
+const double = multiplBy(2) // sets num to 2 and doubles by x
+double(12); // sets x to 12 and multiplies it by num (2), which equals 24
+
+const half = multiplBy(0.5) // sets 0.5 to num
+half(10); // sets x to 10 and halves it by num (0.5), which equals 5
+
+function makeBetweenFunc(x,y) {
+    //the return function takes num and compares it against x and y inputs from the user
+    return function(num){
+       return num >= x && num <= y;
+    }
+}
+
+const isChild = makeBetweenFunc(0, 18); //if user inputs isChild(15), it returns true, as that age is less than 18 but greater than 0
+const isInEighties = makeBetweenFunc(1980, 1990) //if user inputs 1984, function returns true
+const isNiceWeather = makeBetweenFunc(60, 75) // if user inputs a number between 60 and 75, it returns true
